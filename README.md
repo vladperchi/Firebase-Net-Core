@@ -21,7 +21,7 @@ El proyecto define un controlador llamado `DataController` con dos extremos:
    * `/api/data/public`: accesible sin ninguna autenticación
    * `/api/data/protected`: solo accesible si se proporciona un token OAuth correcto
 
-Podemos acceder, corriendo la Api mediante `Swagger`, al punto final público con una simple solicitud `GET` sin ningún token:
+Ponemos a correr la Api, accedemos mediante `Swagger` al punto final público con la solicitud `GET` sin ningún token:
 
 ```
 GET https://localhost:44323/api/Data/public

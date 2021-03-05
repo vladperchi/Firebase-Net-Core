@@ -31,7 +31,7 @@ GET https://localhost:44323/api/Data/public
 Y obtenemos
 
 ```
-HTTP/1.1 200 OK
+200 OK
 ```
 
 Sin embargo, si intentamos llegar al segundo punto final sin un token:
@@ -42,7 +42,7 @@ GET https://localhost:44323/api/Data/protected
 Obtenemos
 
 ```
-HTTP/1.1 401 Unauthorized
+401 Unauthorized
 ```
 
 Para acceder al punto final protegido, necesitamos proporcionar el token OAuth en el encabezado `Autorización`:

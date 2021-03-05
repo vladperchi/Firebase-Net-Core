@@ -9,3 +9,7 @@
         * Habilitar "Correo electrónico / Contraseña"
     * Cambiar a la pestaña "Usuarios"
         * Agregar nuevo usuario
+
+### Configuración de la API WEB .NET Core
+
+* En `Startup.ConfigureServices(..)` establece `firebaseProjectId` dado el id de tu proyecto.

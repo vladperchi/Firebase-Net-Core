@@ -13,3 +13,39 @@
 ### Configuración de la API WEB .NET Core
 
 * En `Startup.ConfigureServices(..)` establece `firebaseProjectId` dado el id de tu proyecto.
+
+### Implementación
+
+El proyecto define un controlador llamado `DataController` con dos extremos:
+
+   * `/api/data/public`: accesible sin ninguna autenticación
+   * `/api/data/protected`: solo accesible si se proporciona un token OAuth correcto
+
+Podemos acceder, corriendo la Api mediante `Swagger`, al punto final público con una simple solicitud `GET` sin ningún token:
+
+```
+GET https://localhost:44323/api/Data/public
+```
+Y obtenemos
+
+```
+HTTP/1.1 200 OK
+```
+
+Sin embargo, si intentamos llegar al segundo punto final sin un token:
+
+```
+GET https://localhost:44323/api/Data/protected
+```
+Obtenemos
+
+```
+HTTP/1.1 401 Unauthorized
+```
+
+Para acceder al punto final protegido, necesitamos proporcionar el token OAuth en el encabezado `Autorización`:
+
+```
+GET https://localhost:44323/api/Data/protected
+Authorization: Bearer [OAUTH_TOKEN]
+```
